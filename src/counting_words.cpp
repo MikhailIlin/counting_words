@@ -15,6 +15,8 @@
 #include <limits>
 #include <map>
 
+int counting_words (char *); //прототип фунциии
+
 #define MAX_WORD_TYPES 500 //мксимальное количество типов слов, т.е. слов из разного количества букв
 using namespace std;
 
@@ -24,8 +26,14 @@ using namespace std;
 
 int main()
 {
+	int z=counting_words("cppstudio.txt");
+    return 0;
+}
+
+int counting_words (char * filename)
+{
     setlocale(LC_ALL, "rus"); // корректное отображение Кириллицы
-    ifstream fin("cppstudio.txt"); // открыли файл для чтения
+    ifstream fin(filename); // открыли файл для чтения
     string str;
     int array[MAX_WORD_TYPES] = {0};
     int words = 0;
@@ -54,5 +62,7 @@ int main()
     			break;
     	}
     }
-    return 0;
+
+ return 0;
 }
+
